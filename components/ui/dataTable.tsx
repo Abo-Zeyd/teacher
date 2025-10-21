@@ -56,7 +56,7 @@ function dataTable() {
                           transition-opacity duration-200"
                             >
                               <ComboBox
-                                changeCompmEvent={(e) => {
+                                changeCompmEvent={() => {
                                   
                                 }}
                                 data={["1", "2", "3"]}
@@ -73,7 +73,7 @@ function dataTable() {
                           transition-opacity duration-200"
                               >
                                 <ComboBox
-                                  changeCompmEvent={(e) => {
+                                  changeCompmEvent={() => {
                                 
                                   }}
                                   data={[
