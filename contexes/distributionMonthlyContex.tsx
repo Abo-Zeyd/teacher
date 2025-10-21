@@ -93,7 +93,7 @@ export const DistributionMonthlyContextProvider = ({
   const [checkRadioAnn, setcheckRadioAnn] = useState<boolean>(false);
   //حالة تتحكم في اختيار التوزيع الشهري
   const [checkRadioMonth, setcheckRadioMonth] = useState<boolean>(true);
-  const [levle, setLevel] = useState<number>(4);
+  const [levle, setLevel] = useState<number>(1);
   //حالة لإظهار وإخفاء قائمة الأشهر
   const [showComboMonths, setshowComboMonths] = useState(true);
   //حالة لإخفاء وإظهار تحيرير الخلية

@@ -28,7 +28,7 @@ export default CompoLevel;
 const classesName: string[] = [
   "السنة الأولى",
   "السنة الثانية",
-  "السنة الثالثة",
+  // "السنة الثالثة",
   "السنة الرابعة",
   "السنة الخامسة",
 ];
@@ -38,8 +38,8 @@ const getLevelValue = (levelName: string): number => {
       return 1;
     case "السنة الثانية":
       return 2;
-    case "السنة الثالثة":
-      return 3;
+    // case "السنة الثالثة":
+    //   return 0;
     case "السنة الرابعة":
       return 4;
     case "السنة الخامسة":

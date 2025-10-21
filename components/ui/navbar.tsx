@@ -17,8 +17,8 @@ function NaveBarGen() {
   const navItems = [
     { name: "الرئيسية", href: "/", icon: <IoHomeOutline size={25}  className="relative -top-1"/> },
     { name: "التوزيعات", href: "/pages/monthlyDistrubtion", icon: <IoDocumentTextOutline size={25}  className="relative -top-1" /> },
-    { name: "التحضير", href: "/pages/monthlyDistrubtion", icon: <AiTwotoneEdit size={25}  className="relative -top-1"/> },
-    { name: "المعلقات", href: "/pages/monthlyDistrubtion", icon: <IoDocumentsOutline size={25}  className="relative -top-1"/> },
+    { name: "التحضير", href: "/pages/lessonPreparation", icon: <AiTwotoneEdit size={25}  className="relative -top-1"/> },
+    { name: "المعلقات", href: "/pages/pendants", icon: <IoDocumentsOutline size={25}  className="relative -top-1"/> },
   ];
   function showDashboard() {
     // هنا يمكنك إضافة منطق لإظهار لوحة التحكم
@@ -70,7 +70,7 @@ function NaveBarGen() {
               onClick={showDashboard}
               className="px-2 py-2 text-black dark:text-white font-semibold"
             >
-              <IoSettingsOutline size={30}/>
+              {/* <IoSettingsOutline size={30}/> */}
             </button>
             {/* <Button handleChange={() => {}}>دخول</Button> */}
           </div>
