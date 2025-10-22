@@ -16,7 +16,7 @@ function NaveBarGen() {
   // إزالة التكرارات باستخدام Set
   const navItems = [
     { name: "الرئيسية", href: "/", icon: <IoHomeOutline size={25}  className="relative -top-1"/> },
-    { name: "التوزيعات", href: "/pages/monthlyDistrubtion", icon: <IoDocumentTextOutline size={25}  className="relative -top-1" /> },
+    { name: "التوازيع", href: "/pages/monthlyDistrubtion", icon: <IoDocumentTextOutline size={25}  className="relative -top-1" /> },
     { name: "التحضير", href: "/pages/lessonPreparation", icon: <AiTwotoneEdit size={25}  className="relative -top-1"/> },
     { name: "المعلقات", href: "/pages/pendants", icon: <IoDocumentsOutline size={25}  className="relative -top-1"/> },
   ];

@@ -13,7 +13,7 @@ export default function Home() {
           className="mx-auto mt-10 rounded-lg shadow-lg"
         />
       </div>
-      <div className='flex flex-col justify-start items-center  mt-10 mr-5 gap-5 bg-background p-10 rounded-lg shadow-lg'>
+      <div className='flex flex-col  justify-start items-center  mt-10 mr-5 gap-10 bg-background p-10 rounded-lg shadow-lg'>
         <div className="text-3xl font-bold">مرحباً بك في موقع المعلم الإلكتروني</div>
 
         <div className="text-center max-w-md text-xl">
@@ -22,6 +22,7 @@ export default function Home() {
             <Link href="/pages/monthlyDistrubtion" className="underline text-blue-600">من هنا</Link>
           </button>
           <p>وإن شاء الله سيتم إثراؤه وإتمامه بما يسهل العملية التعليمية حسب الجهد والوقت </p>
+          <Link href="https://www.youtube.com/watch?v=E72wi7bpoRM" className="underline text-blue-600">شرح إنجاز التوازيع الجزء الأول</Link>
         </div>
 
       </div>
