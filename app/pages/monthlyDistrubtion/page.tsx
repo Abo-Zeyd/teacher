@@ -22,7 +22,7 @@ function distrubtionMonthly() {
           <DataTable />
           <TableFooter />
           <div className="ml-7 flex flex-row items-center justify-center mt-4 text-xl"><p>
-            <strong>ملاحظة: </strong>بالنسبة للإدماج تم إنجاز التوزيعات ببرمجة أسبوع بعد محورين يتم تناول كل محور في نصف أسبوع
+            <strong>ملاحظة: </strong>بالنسبة للإدماج تم إنجاز التوازيع ببرمجة أسبوع بعد محورين يتم تناول كل محور في نصف أسبوع
             </p></div>
           <PrintComponent />
           {/* <Test_Section /> for testing purpose */}
