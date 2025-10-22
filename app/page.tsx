@@ -1,10 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
-
-      <div className='flex flex-col justify-start items-center h-screen mt-20 gap-5'>
+    <div className="flex flex-row ">
+      <div >
+        <Image
+          src="/images/teacher.jpg"
+          alt="Teacher Home Page"
+          width={800}
+          height={400}
+          className="mx-auto mt-10 rounded-lg shadow-lg"
+        />
+      </div>
+      <div className='flex flex-col justify-start items-center  mt-10 mr-5 gap-5 bg-background p-10 rounded-lg shadow-lg'>
         <div className="text-3xl font-bold">مرحباً بك في موقع المعلم الإلكتروني</div>
 
         <div className="text-center max-w-md text-xl">
@@ -16,7 +25,8 @@ export default function Home() {
         </div>
 
       </div>
-
     </div>
+
+    
   );
 }

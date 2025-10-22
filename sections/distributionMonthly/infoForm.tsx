@@ -43,7 +43,7 @@ function InfoForm() {
       {showeInfoSection && (
        
 
-          <div className="grid grid-cols-1 overflow-auto lg:w-4/5  md:grid-cols-2 gap-4 px-2   py-4 rounded-lg border-solid border-2 border-gray-200 auto-rows-auto">
+          <div className="grid grid-cols-1 overflow-auto lg:w-4/5  md:grid-cols-2 gap-4 px-2   py-4 bg-accent rounded-lg border-solid border-2 border-secondary auto-rows-auto">
 
             <div className="flex flex-col  space-y-4 justify-self-center items-center text-right sm:text-left">
               <TextInfo

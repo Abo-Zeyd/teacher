@@ -26,7 +26,7 @@ function NaveBarGen() {
   }
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <header className=" w-full mb-1 dark:bg-gray-900 border-b border-gray-600 dark:border-gray-800  rounded-b-xl">
+      <header className=" w-full mb-1 bg-background dark:bg-gray-900 border-b border-accent dark:border-gray-800  rounded-b-xl">
         <nav className="px-5 py-3 flex items-center justify-between">
           {/* Logo */}
           <Link

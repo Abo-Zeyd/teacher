@@ -17,7 +17,7 @@ export default function TextInfo({ lableName, placeholdertext, onTextChange, tex
       <div className="flex-grow w-fit md:justify-self-center md:items-center"> 
       <input
         type="text"
-        className="bg-accent text-text  border-solid border-2 border-primary rounded-md "
+        className="bg-accent text-text px-3 py-2 border-solid border-2 border-secondary rounded-md "
         placeholder={placeholdertext}
         value={textValue}
         onChange={handleChange}
