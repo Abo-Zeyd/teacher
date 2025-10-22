@@ -19,7 +19,7 @@ export function TableData() {
     const result = mergCellprocessMatrix(await dataObject as unknown as Record<string, string | number>[]);
     if (distSelectionType === "monthly") {
       Getdata = (await result).matrix.slice(startWeek, endtWeek);
-      // console.log(Getdata);
+     
     } else if (distSelectionType === "annual") {
       Getdata = (await result).matrix;
     }

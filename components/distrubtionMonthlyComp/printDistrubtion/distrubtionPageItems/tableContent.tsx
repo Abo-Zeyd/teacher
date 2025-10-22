@@ -8,7 +8,7 @@ import { rotateColumn } from "@/utils/mergCells";
 import { useEffect, useState } from "react";
 
 function TableContent() {
-  const { distMonthly, processedData, useSubjects, numberCollumns } =
+  const { distMonthly, processedData, useSubjects, numberCollumns,  } =
     useDistributionMonthlyContext();
   const { bodyStyle, styleType } = usePrintContext();
   const [rotatedCells, setRotatedCells] = useState<
@@ -71,14 +71,16 @@ function TableContent() {
     ${styleType.tableCellStyle[bodyStyle]}
     text-center align-middle transition-all duration-300 transform origin-center 
     ${
-      rotatedCells[`${index}-${valueIndex}`] === "vertical"
-        ? "[writing-mode:vertical-rl] [text-orientation:mixed] rotate-180"
-        : rotatedCells[`${index}-${valueIndex}`] === "horizontal"
-        ? ""
+      processedData.colSpanMap[index][valueIndex] < 2 &&
+                        (rotatedCells[`${index}-${valueIndex}`] === "vertical"
+                          ? "writing-mode:vertical-rl text-orientation:mixed rotate-180"
+                          : rotatedCells[`${index}-${valueIndex}`] ===
+                            "horizontal"
+                          ? ""
         : rotateColumn(
             useSubjects[valueIndex],
             processedData.rowSpanMap[index][valueIndex]
-          )
+          ))
     }
   `}
                       >

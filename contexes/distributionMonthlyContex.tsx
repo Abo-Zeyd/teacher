@@ -3,6 +3,7 @@
 
 import { mergCellprocessMatrix } from "@/utils/mergCells";
 import { subjects } from "@/utils/useArrays";
+import { arabicCourseNames } from "@/utils/useArrays";
 import {
   createContext,
   useContext,
@@ -10,6 +11,7 @@ import {
   ReactNode,
   Dispatch,
   SetStateAction,
+  useEffect,
 } from "react";
 
 // 🔹 تعريف الواجهة لضمان عدم حدوث خطأ عند تمرير القيم
@@ -72,6 +74,9 @@ interface DistributionMonthlyContextData {
   numberCollumns: number;
   setUseSubjects: Dispatch<SetStateAction<string[]>>;
   setNumberCollumns: Dispatch<SetStateAction<number>>;
+  arbicCoursesEdit: string[];
+  setArbicCoursesEdit: Dispatch<SetStateAction<string[]>>;
+  
 }
 
 // ✅ تعريف الـ Context مع القيمة الافتراضية `undefined`
@@ -134,16 +139,18 @@ export const DistributionMonthlyContextProvider = ({
     academicYear: "",
   });
   const creatMonthlyDistrubtion = async (upDateData: any) => {
+    
     const Getdata = (await mergCellprocessMatrix(upDateData)).matrix;
     setProcessedData(await mergCellprocessMatrix(upDateData));
     setdistMonthly(Getdata);
+    
   };
   //دالة تغيير اسم التوزيع
   const changDistrubtionName = () => {
     if (distSelectionType === "monthly") {
       setDistTitle("توزيع شهر " + distTitleMonth);
     } else {
-      setDistTitle("توزيع سنوي");
+      setDistTitle("التوزيع سنوي");
     }
   };
   //حالة عنوان التوزيع
@@ -155,6 +162,25 @@ export const DistributionMonthlyContextProvider = ({
   const [useSubjects, setUseSubjects] = useState<string[]>([...subjects]);
   //حالة لتخزين عدد الأعمدة
   const [numberCollumns, setNumberCollumns] = useState(14);
+
+  const [arbicCoursesEdit, setArbicCoursesEdit] = useState<string[]>([]);
+  useEffect(() => {
+    let courses: string[] = [];
+    switch (levle) {
+      case 1:
+      case 2:
+        courses = arabicCourseNames.slice(0, 7);
+        break;
+      case 4:
+      case 5:
+        courses = arabicCourseNames.slice(0, 8);
+        break;
+      default:
+        courses = arabicCourseNames.slice(0, 7);
+        break;
+    }
+    setArbicCoursesEdit(courses);
+  }, [levle]);
 
   return (
     <DistributionMonthlyContext.Provider
@@ -213,6 +239,9 @@ export const DistributionMonthlyContextProvider = ({
         numberCollumns,
         setUseSubjects,
         setNumberCollumns,
+        arbicCoursesEdit,
+        setArbicCoursesEdit,
+        
       }}
     >
       {children}

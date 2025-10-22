@@ -1,5 +1,6 @@
 
 
+
 interface MatrixResult {
   matrix: (string | number)[][];
   rowSpanMap: number[][];
@@ -47,7 +48,8 @@ export async function mergCellprocessMatrix(
   data: Record<string, string | number>[],
   options: MatrixOptions = {}
 ): Promise<MatrixResult> {
-  const { maxRows = 1000, maxColumns = 100, useTypedArray = true } = options;
+
+  const { maxRows = 1000, maxColumns = 100 } = options;
 
   // التحقق من صحة البيانات المدخلة
   if (!Array.isArray(data)) {
@@ -65,7 +67,7 @@ export async function mergCellprocessMatrix(
   // التحقق من صحة كل صف
   data.forEach((row, index) => {
     if (row === null || row === undefined) {
-      throw new Error(`الصف رقم ${index + 1} فارغ`);
+      throw new Error(`الصف رقم ${index } فارغ`);
     }
     if (typeof row !== "object") {
       throw new Error(`الصف رقم ${index + 1} يجب أن يكون كائناً`);
@@ -73,6 +75,7 @@ export async function mergCellprocessMatrix(
   });
 
   const keys = await Object.keys(data[0]);
+
   if (keys.length === 0) {
     throw new Error("لا توجد مفاتيح في البيانات");
   }
@@ -113,6 +116,7 @@ export async function mergCellprocessMatrix(
           `نوع القيمة غير صالح في الصف ${rowIndex + 1} والمفتاح: ${key}`
         );
       }
+      
       return value;
     })
   );

@@ -2,11 +2,10 @@
 
 import ComboBox from "@/components/ui/ComboBox";
 import { useDistributionMonthlyContext } from "@/contexes/distributionMonthlyContex";
-import { arabicCourseNames } from "@/utils/useArrays";
 import { useEffect, useState } from "react";
 
-function CmboWeeks({ rowindex, valueFist }: { rowindex: number, valueFist?:string }) {
-  const { data, distMonthly, creatMonthlyDistrubtion } =
+function CmboWeeks({ rowindex }: { rowindex: number}) {
+  const { data, distMonthly,arbicCoursesEdit, creatMonthlyDistrubtion } =
     useDistributionMonthlyContext();
   // const arabicUnits = data?.map(subArray => subArray[1]);
   const [arabicUnits, setArabicUnits] = useState<string[]>([]);
@@ -17,9 +16,11 @@ function CmboWeeks({ rowindex, valueFist }: { rowindex: number, valueFist?:strin
         .filter((item) => item && item["Units"]) // تأكد من وجود القيم
         .map((item) => item["Units"]);
       setArabicUnits(extractedUnits);
+     
     }
 
   }, [data, setArabicUnits]); // إعادة التنفيذ عند تغيير `data`
+
 
   return (
     <div>
@@ -30,19 +31,22 @@ function CmboWeeks({ rowindex, valueFist }: { rowindex: number, valueFist?:strin
         >
           <ComboBox
             changeCompmEvent={async (e) => {
-              console.log("valueFist", valueFist);
+            
               const selected = e.target.selectedIndex;
               const upDateData = [...distMonthly];
+              
               let i = 1;
-              for (const item of arabicCourseNames) {
+              for (const item of arbicCoursesEdit) {
                 upDateData[rowindex][i] = data[selected][item];
 
                 i++;
               }
+              
               creatMonthlyDistrubtion(upDateData);
             }}
             data={arabicUnits}
-            labelTitle=""
+            labelTitle="" 
+            
           />
         </div>
       </div>

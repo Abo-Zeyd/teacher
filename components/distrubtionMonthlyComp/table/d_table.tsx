@@ -303,6 +303,7 @@ function DataTable() {
 
             <tbody className="border-solid boder-4 border-primary">
               {distMonthly.map((item, index) => (
+                
                 <tr key={index} className="bg-accent border-2  hover:bg-muted">
                   {Object.entries(item)
                     .slice(0, numberCollumns)
@@ -337,6 +338,7 @@ function DataTable() {
                                   />
                                 
                             </div>
+                            
                           )}
                           {/* قائمة تغيير أسابيع الشهر */}
                           {/* {key === "1" && index !== 0 && processedData.matrix[index -1][0] !=="1/2" && (
@@ -354,6 +356,7 @@ function DataTable() {
                               />
                             </div>
                           )} */}
+                          
                           {key !== "0" && key !== "1" && index !== 0 && (
                             <div className="absolute flex-row items-center right-4 -top-6 translate-y-1/4 m-1 text-gray-700 cursor-pointer hidden group-hover:flex">
                               <CgArrowsMergeAltV
@@ -445,7 +448,7 @@ function DataTable() {
                               {/* قائمة الوحدات */}
                               {key === "2" && (
                                 <div className=" p-0  bg-primary border-2 border-gray-200 rounded-lg hidden group-hover:block transition-opacity duration-200 w-full z-50">
-                                  <Arbic_Unit_List rowindex={index} valueFist = {String(processedData.matrix[index][0])} />
+                                  <Arbic_Unit_List rowindex={index}  />
                                 </div>
                               )}
                             </div>
@@ -465,8 +468,8 @@ function DataTable() {
                           {/* عرض محتوى الخلية */}
                           <div className="flex justify-center items-center h-full w-full">
                             <div
-                              className={`${
-                                rotatedCells[`${index}-${valueIndex}`] ===
+                              className={`
+                                ${colSpan < 2 && (rotatedCells[`${index}-${valueIndex}`] ===
                                 "vertical"
                                   ? "[writing-mode:vertical-rl] [text-orientation:mixed] rotate-180"
                                   : rotatedCells[`${index}-${valueIndex}`] ===
@@ -475,8 +478,7 @@ function DataTable() {
                                   : rotateColumn(
                                       useSubjects[valueIndex],
                                       rowSpan
-                                    )
-                              }
+                                    ))}
                                             text-center
                                          `}
                             >
@@ -484,7 +486,7 @@ function DataTable() {
                                 .split("\n")
                                 .map((line, i) => (
                                   <span key={i} className="text-lg/6">
-                                    {line}
+                                    {line} 
                                     <br />
                                   </span>
                                 ))}

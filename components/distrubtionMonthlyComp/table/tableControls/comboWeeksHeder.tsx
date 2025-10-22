@@ -2,11 +2,11 @@
 
 import ComWeeks from "@/components/ui/comboWeeks";
 import { useDistributionMonthlyContext } from "@/contexes/distributionMonthlyContex";
-import { arabicCourseNames } from "@/utils/useArrays";
+// import { arabicCourseNames } from "@/utils/useArrays";
 
 //قائمة منسدلة تظهر في عناوين الجدول وظيفتها تغيير ابوع البداة للمادة
 function CmboWeeks({ indexcol }: { indexcol: number }) {
-  const { creatMonthlyDistrubtion, distMonthly, data } = useDistributionMonthlyContext();
+  const { creatMonthlyDistrubtion, distMonthly, data, arbicCoursesEdit } = useDistributionMonthlyContext();
 
   return (
     <div>
@@ -16,13 +16,12 @@ function CmboWeeks({ indexcol }: { indexcol: number }) {
             compoTitle=""
             handleChange={(e) => {
               const keys = Object.keys(data[0]);
-              
               const courseName = keys[indexcol];
               const courseIndex = keys.indexOf(courseName);
               let weekTarget = Number(e.target.value);
               const UpdateMonth = [...distMonthly];
               if (courseName === "Units") {
-                for (const item of arabicCourseNames) {
+                for (const item of arbicCoursesEdit) {
                   let w_target = weekTarget
                  const courseIndex =keys.indexOf(item);
                   for (let i = 0; i < UpdateMonth.length; i++) {

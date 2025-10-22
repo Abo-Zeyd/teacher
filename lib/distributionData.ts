@@ -25,6 +25,7 @@ export async function DistributionData(level: number) {
     if (!data) {
       return null;
     }
+    
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);

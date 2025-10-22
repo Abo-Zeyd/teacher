@@ -6,7 +6,7 @@ import { useDistributionMonthlyContext } from "@/contexes/distributionMonthlyCon
 import { useEffect, useState } from "react";
 
 function TableContent() {
-  const { distMonthly, processedData, useSubjects, numberCollumns, formValues, } =
+  const { distMonthly, processedData, useSubjects, numberCollumns, formValues, distTitle } =
     useDistributionMonthlyContext();
 // 
 const pargraphStyle: React.CSSProperties = {
@@ -50,7 +50,7 @@ const pargraphStyle: React.CSSProperties = {
 
             <td style={{ width: "33%", verticalAlign: "center", textAlign: "center", fontSize: "24px", border: "none" }}>
 
-              <p><b>توزيع سنوي</b></p>
+              <p><b>{distTitle}</b></p>
 
             </td>
             <td className="header-table-info" >
