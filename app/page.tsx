@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-row ">
+    <div className="flex flex-col lg:flex-row rounded-lg shadow-lg p-10 bg-background justify-center items-center gap-5 mt-20">
       <div >
         <Image
           src="/images/teacher.jpg"
@@ -13,8 +13,8 @@ export default function Home() {
           className="mx-auto mt-10 rounded-lg shadow-lg"
         />
       </div>
-      <div className='flex flex-col  justify-start items-center  mt-10 mr-5 gap-10 bg-background p-10 rounded-lg shadow-lg'>
-        <div className="text-3xl font-bold">مرحباً بك في موقع المعلم الإلكتروني</div>
+      <div className='flex flex-col  justify-start items-center  mt-10  gap-5 bg-background p-1 '>
+        <div className="text-3xl font-bold flex flex-col text-center ">مرحباً بك في موقع الأستاذ الإلكتروني</div>
 
         <div className="text-center max-w-md text-xl">
           <p>الموقع لا يحتوي حاليا الا على التوزيعات السنوية والشهرية محينة لسنة 2025-2026 </p>
