@@ -169,14 +169,14 @@ export const DistributionMonthlyContextProvider = ({
     switch (levle) {
       case 1:
       case 2:
-        courses = arabicCourseNames.slice(0, 7);
+        courses = arabicCourseNames.slice(0, 8);
         break;
       case 4:
       case 5:
-        courses = arabicCourseNames.slice(0, 8);
+        courses = arabicCourseNames.slice(0, 9);
         break;
       default:
-        courses = arabicCourseNames.slice(0, 7);
+        courses = arabicCourseNames.slice(0, 8);
         break;
     }
     setArbicCoursesEdit(courses);
