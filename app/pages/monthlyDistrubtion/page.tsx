@@ -8,7 +8,7 @@ import TableFooter from '@/sections/distributionMonthly/tableFooter'
 import {DistributionMonthlyContextProvider} from '@/contexes/distributionMonthlyContex'
 import PrintComponent from "@/sections/distributionMonthly/printDistr";
 import { PrintContextContext } from "@/components/distrubtionMonthlyComp/printDistrubtion/printContext";
-
+import CommentsSection from '@/components/distrubtionMonthlyComp/comments/CommentsSection'
 function distrubtionMonthly() {
   return (
     <div>
@@ -21,12 +21,14 @@ function distrubtionMonthly() {
           <InfoForm />
           <DataTable />
           <TableFooter />
+          
           <div className="ml-7 flex flex-row items-center justify-center mt-4 text-xl"><p>
             <strong>ملاحظة: </strong>بالنسبة للإدماج تم إنجاز التوازيع ببرمجة أسبوع بعد محورين يتم تناول كل محور في نصف أسبوع
             </p></div>
           <PrintComponent />
           {/* <Test_Section /> for testing purpose */}
         </PrintContextContext>
+        <CommentsSection />
       </DistributionMonthlyContextProvider>
     </div>
   )
