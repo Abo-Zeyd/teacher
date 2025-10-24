@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description: "موقع الأستاذ يقدم تسهيلا لإنجاز الوثائق التربوية كالتوازبع والمعلقات ....",
   keywords: ["تعليم", "دروس", "الأستاذ", "تعليم إلكتروني", "التوازبع", "المعلقات"],
   authors: [{ name: "عز الدين عويسي" }],
+  verification: {
+    google: "sckopszlDs9FSzFID_8S3dlmzQO8qDKOgSqaz9jtCTM",
+    
+  },
   openGraph: {
     title: "الأستاذ",
     description: "أنجز وثائقك بسهولة.",
