@@ -105,13 +105,16 @@ function DataTable() {
     //   setUseSubjects([...subjects]);
     //   setNumberCollumns(14);
     // }
+    // alert(levle);
     switch (levle) {
+       
       case 3: {
+        
         const filteredSubjects = subjects.filter(
           (subject) => subject !== "التربية المدنية" && subject !== "الجغرافيا"
         );
         setUseSubjects(filteredSubjects);
-        setNumberCollumns(17);
+        setNumberCollumns(15);
         break;
       }
       case 1:
@@ -139,6 +142,7 @@ function DataTable() {
         setNumberCollumns(12); // زدنا خانة جديدة
         break;
       }
+      
       default: {
         setUseSubjects([...subjects]);
         setNumberCollumns(17);
